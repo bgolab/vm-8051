@@ -39,14 +39,12 @@ Code examples (small * capital letters accepted):
 An explanation: for every value from 1 to 10 (exclusive) print value, separate by ',', print power of two of this value and move to new line).
 Simple? Yeah, as Forth;)
 
-2. Access HW to use watchdog to reboot VM
+2. Demonstrates SFR access: use watchdog to reboot VM
 0xc1 0x20 SW
 An explanation: 0x20 written at 0xc1 SFR enables watchdog so the vm reboots as we do not refresh the watchdog counter
 
-
-#FEATURES: STC8G1K08A(xd:1kB)/STC15W408A(xd:256); bcode-loader+ee.save/boot; int vs poll-flags;
--0x8e 64 SW 		(AUXR.6=1: 1T for UART; baudrate change on the fly 9600->115.2)
-
--LED: P5.5 LED?, P5.4 GND - charlie plexing; AIAPP gen code: P5M0 |= 0x30; P5M1 &= ~0x30; where SFR: P5M0 = 0xCA; P5M1 = 0xC9; P5 = 0xc8
-cfg: 0xCA SR 0x30 | 0xCA SWAP SW 0xC9 SR 0x30 ~ & 0xC9 SWAP SW; write: 0xc8 0x10 SW OR 0xc8 0x20 SW (for P5.4 & P5.5 pin revered)
-blink: 0xc8 PA L0 JSR L3 A 0x10 SW JSR L3 A 0 SW JMP L0 HLT L3 300 pt0 L1 t0 0 <> if L1 RET (buf is TOO short to fit this code - split it)
+2. Demonstrates virtual timers capabilities: blinking a LED connected between P5.5 and P5.4 (charlie plexing)cfg: 0xCA SR 0x30 | 0xCA SWAP SW 0xC9 SR 0x30 ~ & 0xC9 SWAP SW; write: 0xc8 0x10 SW OR 
+0xc8 PA L0 JSR L3 A 0x10 SW JSR L3 A 0 SW JMP L0 HLT 
+L3 300 pt0 L1 t0 0 <> if L1 RET 
+(the command buffer of 80 bytes is TOO short to fit this code so need to split it into at least two lines)
+An explanation: it's an excercise to the reader
