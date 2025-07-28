@@ -40,7 +40,7 @@ The stack-based vm language:
 
 -vtimer: 			Tx(N), e.g. T0; (N) PTx, e.g. 90 PT0 (inits PT0 w/ 90); no-autoload, countdown, max 32s<int, 1ms unit, x=0-3;
 
-Code examples (small * capital letters accepted):
+Code examples (small and capital letters accepted):
 1. DO LOOP
    
 1 10 DO I . ',' I I * . CR LOOP
