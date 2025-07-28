@@ -54,7 +54,7 @@ Simple? Yeah, as Forth;)
 
 An explanation: 0x20 written at 0xc1 SFR enables watchdog so the vm reboots as we do not refresh the watchdog counter
 
-2. Demonstrates virtual timers capabilities: blinking a LED connected between P5.5 and P5.4 (charlie plexing)cfg:
+2. Demonstrates virtual timers capabilities: blinking a LED connected between P5.5 and P5.4 (charlie plexing):
 
 0xc8 PA L0 JSR L3 A 0x10 SW JSR L3 A 0 SW JMP L0 HLT 
 L3 300 pt0 L1 t0 0 <> if L1 RET 
