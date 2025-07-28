@@ -3,8 +3,8 @@ stack-based vm for 8051
 ---
 I recently discovered modern STC 8051 MCU versions in many popular DIY kits, and decided to implement a kind of toy vm. 
 
-To simplify things and be able to fit the binary in constraind evironment the stack-based architecture was selected.
-Stack-based architectures assumes RPN-like ISA design (we put data on data stack, call function which will consume the data and will return the resulst alaso on the stack).
+To simplify things and be able to fit the binary in constrained evironment the stack-based architecture was selected.
+Stack-based architectures assumes RPN-like ISA design (we put data on data stack, we call a function which will consume the data and will return the resulst alaso on the stack).
 To make stack-machine vm more usable I added couple of registers;)
 
 What is modern 8051: 
