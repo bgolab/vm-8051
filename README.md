@@ -28,7 +28,7 @@ The stack-based vm language:
 
 -flow: 				(M N) DO; I; (N)IFBRK; IFCNT; LOOP (M...N-1, nesting supported), Lx, (N)IF Lx, JMP Lx, JSR Lx / RET, HLT(exit)
 
--i/o: 				'str'(print,spaces not supported), (N)PRC, (N)., CR (new line), KEY(K) or SBUF(non-block) or KEY(non-block w/ SBUF internally)?
+-i/o: 				'str'(print string), (N)PRC, (N)., CR (new line), KEY(K) or SBUF(non-block) or KEY(non-block w/ SBUF internally)?
 
 -math:				+, -, *, /, %, &, |, ^, ==, <>, >, >=, <, <=, --, ++, ~, takes arg(s) from stack and returns back result
 
