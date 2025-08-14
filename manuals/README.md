@@ -1,20 +1,11 @@
 WARNING: This part will often change, some parts of manual might be oudate as the development is in the early stage
 
 Very draft stage of the manual:
+-OS:					[s]tate / [r]reset(state) / [z]eroize(state&code), e[x]ecute / [t]race, ESC-break
 
-OS-like commands:
-- x (eXecute) - starts VM and runs programs
-- s (show state) - good for debugging to reveal internal VM state (bytecode, data & return stacks, registers, etc)
-- t (trace) - good for debugging to trace proxes of execution
-- r (reset state) - to clear vm state
-- z (zeroize) - apart from resetting the vm state it also clears code area
-- ESC (breaks program) - actaually not a command but helpfull feature which allows to break running program
+-flow: 				(M N)DO; I; (N)IFBRK|IFCNT; LOOP (M...N-1, nesting), Lx(label), (N)IF | JMP | JSR Lx, RET, HLT(exit)
 
-The stack-based vm language:
-
--flow: 				(M N) DO; I; (N)IFBRK; IFCNT; LOOP (M...N-1, nesting supported), Lx, (N)IF Lx, JMP Lx, JSR Lx / RET, HLT(exit)
-
--i/o: 				'str'(print string), (N)PRC, (N)., CR (new line), KEY(K) or SBUF(non-block) or KEY(non-block w/ SBUF internally)?
+-i/o: 				'str'(print), (N).c(print as char, (N).(print as int), (N).x(print as hex); CR, KEY(K) or SBUF(non-block) or KEY(non-block w/ SBUF internally)?
 
 -math:				+, -, *, /, %, &, |, ^, ==, <>, >, >=, <, <=, --, ++, ~, takes arg(s) from stack and returns back result
 
