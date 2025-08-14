@@ -17,3 +17,28 @@ Very draft stage of the manual:
 -stack-reg:		R(N), e.g. A (A on stack); (N) PR, e.g. 1 PA (load 1 to A); R: A-H
 
 -vtimer: 			Tx(N), e.g. T0; (N) PTx, e.g. 90 PT0 (inits PT0 w/ 90); no-autoload, countdown, max 32s<int, 1ms unit, x=0-3;
+
+
+Runtime error codes :
+
+#define MISSING_Lx		"mlx"
+
+#define MISSING_LOOP	"mDL"
+
+#define MISSING_ARG		"arg"
+
+#define BAD_HEX				"hex"
+
+#define BAD_CMD				"cmd"
+
+#define BAD_LEN 			"len"
+
+#define BAD_Lx				"blx"
+
+#define DS_OVERFLOW		"dof"
+
+#define DS_UNDERFLOW	"duf"
+
+#define RS_OVERFLOW		"rof"
+
+#define RS_UNDERFLOW	"ruf"
