@@ -64,6 +64,6 @@ L3 300 pt0 L1 t0 0 <> if L1 RET
 An explanation: it's an excercise to the reader
 
 The hardware:
-[https://raw.githubusercontent.com/bgolab/vm-8051/refs/heads/main/Sad65bc710472466db1308be795e810dbz.webp](https://github.com/bgolab/vm-8051/blob/main/manuals/ffaf2857487eb17f00f6ba5ee441.jpg)
+![alt text](https://github.com/bgolab/vm-8051/blob/main/manuals/ffaf2857487eb17f00f6ba5ee441.jpg)
 
 To be updated...
