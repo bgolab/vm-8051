@@ -1,6 +1,6 @@
 WARNING: This part will often change, some parts of manual might be oudate as the development is in the early stage
 
-Very draft stage of the manual:
+- Very draft stage of the manual:
 
 -OS:					[s]tate / [r]reset(state) / [z]eroize(state&code), e[x]ecute / [t]race, ESC-break
 
