@@ -22,21 +22,33 @@ WARNING: This part will often change, some parts of manual might be oudate as th
 - Runtime error codes + token types (as reported when tracing enabled) :
 
 #define NO_LAB				"nLAB"
+
 #define NO_LOOP				"nLOOP"
+
 #define NO_ARG				"nARG"
 
 #define BAD_HEX				"bHEX"
+
 #define BAD_NUM				"bNUM"
+
 #define BAD_CMD				"bCMD"
+
 #define BAD_LEN 			"bLEN"
+
 #define BAD_LAB				"bLAB"
 
 #define DS_OVERFLOW		"oDS"
+
 #define DS_UNDERFLOW	"uDS"
+
 #define RS_OVERFLOW		"oRS"
+
 #define RS_UNDERFLOW	"uRS"
 
 #define	T_NUM					"NUM"
+
 #define	T_STR					"STR"
+
 #define	T_KEY					"KEY"
+
 #define	T_LAB					"LAB"
