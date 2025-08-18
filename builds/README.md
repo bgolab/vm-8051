@@ -2,7 +2,7 @@ WARNING: The development is still in the alpha stage - the features may change f
 
 Release notes:
 
-- v0.3B1 
+- v0.3B1 (obsolete)
 
 HW: STC8G1K08A
 
@@ -12,7 +12,7 @@ Features: 's' - added ver/pc info; z; supported small/capital letters in command
 
 Refactoring: interpreter-BIG changes; 
 
-- v0.3B2 
+- v0.3B2 (obsolete)
 
 HW :STC8G1K08A; 
 
