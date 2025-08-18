@@ -19,26 +19,24 @@ WARNING: This part will often change, some parts of manual might be oudate as th
 -vtimer: 			Tx(N), e.g. T0; (N) PTx, e.g. 90 PT0 (inits PT0 w/ 90); no-autoload, countdown, max 32s<int, 1ms unit, x=0-3;
 
 
-Runtime error codes :
+- Runtime error codes + token types (as reported when tracing enabled) :
 
-#define MISSING_Lx		"mlx"
+#define NO_LAB				"nLAB"
+#define NO_LOOP				"nLOOP"
+#define NO_ARG				"nARG"
 
-#define MISSING_LOOP	"mDL"
+#define BAD_HEX				"bHEX"
+#define BAD_NUM				"bNUM"
+#define BAD_CMD				"bCMD"
+#define BAD_LEN 			"bLEN"
+#define BAD_LAB				"bLAB"
 
-#define MISSING_ARG		"arg"
+#define DS_OVERFLOW		"oDS"
+#define DS_UNDERFLOW	"uDS"
+#define RS_OVERFLOW		"oRS"
+#define RS_UNDERFLOW	"uRS"
 
-#define BAD_HEX				"hex"
-
-#define BAD_CMD				"cmd"
-
-#define BAD_LEN 			"len"
-
-#define BAD_Lx				"blx"
-
-#define DS_OVERFLOW		"dof"
-
-#define DS_UNDERFLOW	"duf"
-
-#define RS_OVERFLOW		"rof"
-
-#define RS_UNDERFLOW	"ruf"
+#define	T_NUM					"NUM"
+#define	T_STR					"STR"
+#define	T_KEY					"KEY"
+#define	T_LAB					"LAB"
