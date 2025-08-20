@@ -1,32 +1,14 @@
 WARNING: This part will often change, some parts of manual might be oudate as the development is in the early stage
 
-- Very draft stage of the manual (here 0.3B2 version):
+- Early draft of the manual (0.4B1 version):
 
--OS:					[s]tate / [r]reset(state) / [z]eroize(state&code), e[x]ecute / [t]race, ESC-break
+-notes: watch out name-conflict(label vs os/reg/timer); RPN-like; HLT=0(exit, separate code from subroutines, only SINGLE HLT so separate all procedures in one place following HLT!); infinite-loop->JMP; RSTACK for JSR/DL/loop-counters; watch/clean D/RSTACK!; int16(-32k...32k)
 
--flow: 				(M N)DO; I; (N)IFBRK|IFCNT; LOOP (M...N-1, nesting), Lx(label), (N)IF | JMP | JSR Lx, RET, HLT(exit)
+-os:					[s]tate, [z]eroize(state&code), e[x]ec, [t]race, [ESC]break
 
--i/o: 				'str'(print), (N).c(print as char, (N).(print as int), (N).x(print as hex); CR, KEY(K) or SBUF(non-block) or KEY(non-block w/ SBUF internally)?
+-flow:				(M N)DO, I, (N)IFBRK|IFCNT, LOOP(M...N-1, nesting); label(3-char followed by ':'); (N)IFJMP; JMP|JSR label(no ':'); RET; HLT(exit)
 
--math:				+, -, *, /, %, &, |, ^, ==, <>, >, >=, <, <=, --, ++, ~, takes arg(s) from stack and returns back result
-
--stack-num:		DUP, DROP, SWAP, RPSH, RPOP, RDROP, RFETCH, N/0xH-HHHH(hex)-on stack
-
--stack-mem:		(addr)MR / (addr val)MW (XDATA/XSFR); (addr)SR / (addr val)SW (SFR); sbit-BR/BW?
-
--stack-reg:		R(N), e.g. A (A on stack); (N) PR, e.g. 1 PA (load 1 to A); R: A-H
-
--vtimer: 			Tx(N), e.g. T0; (N) PTx, e.g. 90 PT0 (inits PT0 w/ 90); no-autoload, countdown, max 32s<int, 1ms unit, x=0-3;
-
-- Very draft stage of the manual (here 0.4B1 version):
-
--os:		[s]tate, [r]reset(state), [z]eroize(state&code), e[x]ec, [t]race, [ESC]break
-
--flow:	(M N)DO, I, (N)IFBRK|IFCNT, LOOP(M...N-1, nesting); label(3-char followed by ':'); (N)IF|JMP|JSR label(no ':'); RET; HLT(exit)
-
--print:	'str'(string), (N).c(char), (N).(dec), (N).x(hex); CR(new line)
-
--input:	KEY(blocking)); SBUF(non-blocking)
+-print/input:	'str'(string), (N).c(char), (N).(dec), (N).x(hex); CR(new line); KEY(blocking))
 
 -math:	+, -, *, /, %, &, |, ^, ==, <>, >, >=, <, <=, --, ++, ~
 
@@ -38,29 +20,29 @@ WARNING: This part will often change, some parts of manual might be oudate as th
 
 - Runtime error codes + token types (as reported when tracing enabled) :
 
-#define NO_LAB				"nLAB"
+#define MISSING_LAB		"e:mLAB"
 
-#define NO_LOOP				"nLOOP"
+#define MISSING_LOOP	"e:mLOOP"
 
-#define NO_ARG				"nARG"
+#define MISSING_ARG		"e:mARG"
 
-#define BAD_HEX				"bHEX"
+#define BAD_HEX				"e:bHEX"
 
-#define BAD_NUM				"bNUM"
+#define BAD_NUM				"e:bNUM"
 
-#define BAD_CMD				"bCMD"
+#define BAD_CMD				"e:bCMD"
 
-#define BAD_LEN 			"bLEN"
+#define BAD_LEN 			"e:bLEN"
 
-#define BAD_LAB				"bLAB"
+#define BAD_LAB				"e:bLAB"
 
-#define DS_OVERFLOW		"oDS"
+#define DS_OVERFLOW		"e:DSo"
 
-#define DS_UNDERFLOW	"uDS"
+#define DS_UNDERFLOW	"e:DSu"
 
-#define RS_OVERFLOW		"oRS"
+#define RS_OVERFLOW		"e:RSo"
 
-#define RS_UNDERFLOW	"uRS"
+#define RS_UNDERFLOW	"e:RSu"
 
 #define	T_NUM					"NUM"
 
